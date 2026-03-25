@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- SEO OPTIMALIZACE (Upraveno dle auditu) -->
+    <!-- SEO OPTIMALIZACE -->
     <title>Ubytování Aranka Žatec | Prémiové apartmány s privátní zahradou</title>
     <meta name="description" content="Hledáte klid a soukromí? Ubytování Aranka nabízí prémiové apartmány s privátní zahradou kousek od centra Žatce. Rezervujte online od 550 Kč/noc.">
     <meta name="theme-color" content="#2C241B">
@@ -113,7 +113,6 @@
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* Vyladění opacit pro zářivější fotky */
         .mood-card { transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); cursor: pointer; border-radius: 20px; overflow: hidden; position: relative; display: flex; flex-direction: column; justify-content: flex-end; background-color: #e5e0d8; aspect-ratio: 4/5; transform: translateZ(0); }
         .mood-card:hover { transform: translateY(-12px); box-shadow: 0 40px 60px -15px rgba(44, 36, 27, 0.4); z-index: 10; }
         .mood-card img { transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1); width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; opacity: 0.9; }
@@ -146,7 +145,7 @@
 
     <!-- VIP HESLO -->
     <div id="password-protection" class="fixed inset-0 z-[100000] flex flex-col items-center justify-center" aria-hidden="false">
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-15"></div>
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-15"></div>
         <div class="relative z-10 w-full max-w-md px-8 text-center reveal active">
             <span class="font-serif text-5xl md:text-6xl text-brand-caramel mb-6 block tracking-[0.25em]">ARANKA</span>
             <p class="text-white/60 text-xs tracking-[0.3em] uppercase mb-16 font-light">Diskrétní zóna</p>
@@ -161,7 +160,7 @@
         </div>
     </div>
 
-    <!-- Cookie Banner (Sémanticky upraveno z auditu: Souhlasím vs Pouze nutné) -->
+    <!-- Cookie Banner -->
     <aside id="cookie-banner" class="bg-brand-dark text-white p-6 md:p-8 shadow-premium border-t border-brand-caramel/20" aria-label="Upozornění na soubory cookies">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="text-sm font-light leading-relaxed max-w-3xl">
@@ -223,7 +222,7 @@
         <div class="modal-content max-w-4xl bg-white shadow-2xl relative border border-brand-sand flex flex-col md:flex-row overflow-hidden">
             <button onclick="closeAllOverlays()" class="absolute top-4 right-4 md:top-6 md:right-6 text-brand-dark hover:text-brand-caramel transition-colors p-2 z-20 bg-white/50 rounded-full backdrop-blur-sm" aria-label="Zavřít"><i data-lucide="x" class="w-6 h-6 md:w-8 md:h-8"></i></button>
             <div class="w-full md:w-1/2 aspect-square md:aspect-auto relative bg-brand-sand">
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Detail prosklené pergoly s venkovním posezením" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1558438832-57ee02164d1f?auto=format&fit=crop&w=800&q=80" alt="Detail prosklené pergoly s venkovním posezením" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
             </div>
             <div class="w-full md:w-1/2 p-8 md:p-12 text-left flex flex-col justify-center relative bg-white">
                 <div class="w-16 h-16 bg-brand-sand rounded-full flex items-center justify-center mb-6 shadow-inner"><i data-lucide="leaf" class="w-8 h-8 text-brand-caramel"></i></div>
@@ -316,14 +315,13 @@
     <main>
         <!-- HERO -->
         <section class="relative w-full flex flex-col items-center justify-center min-h-screen bg-brand-dark overflow-hidden">
-            <!-- OPRAVA FOTOGRAFIÍ: Nahrazeno pevným obrázkem, aby nevznikla černá prázdná plocha -->
+            <!-- OPRAVA FOTOGRAFIE: Vrácena jasná fungující fotka -->
             <div class="absolute inset-0 z-0 bg-brand-dark">
-                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80" alt="Aranka Žatec ubytování" class="w-full h-full object-cover opacity-60">
+                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1920&q=80" alt="Aranka Žatec ubytování" class="w-full h-full object-cover opacity-60">
             </div>
             <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/75 via-brand-dark/40 to-brand-dark/90 z-0"></div>
             
             <div class="relative z-10 w-full max-w-6xl mx-auto px-6 text-center pb-12 pt-24 flex flex-col items-center animate-fade-in">
-                <!-- Úprava copywritingu (SEO Klíčová slova z auditu) -->
                 <span class="text-brand-caramel uppercase tracking-[0.4em] font-bold text-[0.65rem] mb-6 block animate-slide-up" style="animation-delay: 0.2s">Prémiové apartmány v Žatci</span>
                 <h1 class="font-serif text-5xl md:text-7xl lg:text-[7.5rem] mb-6 tracking-[0.05em] text-white drop-shadow-2xl leading-tight animate-slide-up" style="animation-delay: 0.4s">Ubytování<br><span class="text-brand-caramel italic font-light">Aranka</span></h1>
                 <p class="text-white/80 text-lg md:text-2xl font-light max-w-2xl mx-auto drop-shadow-md leading-relaxed mb-16 animate-slide-up" style="animation-delay: 0.6s">
@@ -332,6 +330,7 @@
                 
                 <nav aria-label="Rychlá navigace" class="flex flex-nowrap overflow-x-auto justify-start lg:justify-center items-center gap-3 w-full no-scrollbar snap-x px-2 pb-6 animate-slide-up" style="animation-delay: 0.8s">
                     <a href="#o-nas" class="snap-center shrink-0 px-8 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-[0.7rem] font-bold uppercase tracking-[0.2em] text-white hover:bg-brand-caramel hover:border-brand-caramel hover:shadow-glow transition-all duration-300">Příběh</a>
+                    <!-- OPRAVA ODKAZU: Odstraněno nesprávné #ubytovani-karty -->
                     <a href="#ubytovani" class="snap-center shrink-0 px-8 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-[0.7rem] font-bold uppercase tracking-[0.2em] text-white hover:bg-brand-caramel hover:border-brand-caramel hover:shadow-glow transition-all duration-300">Pokoje</a>
                     <a href="#pro-firmy" class="snap-center shrink-0 px-8 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-[0.7rem] font-bold uppercase tracking-[0.2em] text-white hover:bg-brand-caramel hover:border-brand-caramel hover:shadow-glow transition-all duration-300">Pro firmy</a>
                     <button onclick="openBooking('all')" class="snap-center shrink-0 px-10 py-4 rounded-full border border-brand-caramel bg-brand-caramel text-white text-[0.7rem] font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-brand-dark hover:border-white transition-all duration-300 shadow-glow ml-0 lg:ml-2 flex items-center gap-2">Zjistit dostupnost <i data-lucide="calendar" class="w-4 h-4"></i></button>
@@ -463,7 +462,8 @@
         </section>
 
         <!-- KARTY APARTMÁNŮ -->
-        <section id="ubytovani-karty" class="pt-24 pb-32 bg-brand-sand text-brand-dark border-b border-[#e5e0d8] relative z-10">
+        <!-- OPRAVA ID: Změněno z ubytovani-karty na ubytovani, aby odkaz v menu fungoval -->
+        <section id="ubytovani" class="pt-24 pb-32 bg-brand-sand text-brand-dark border-b border-[#e5e0d8] relative z-10">
             <div class="max-w-7xl mx-auto px-6 w-full">
                 <div class="mb-16 text-center reveal">
                     <span class="text-brand-caramel uppercase tracking-[0.3em] font-bold text-[0.65rem] mb-4 block">Ubytování na míru</span>
@@ -471,9 +471,9 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                    <!-- OPRAVA FOTOGRAFIÍ: Vloženy stabilní a trvalé odkazy na fotografie s vysokým jasem -->
+                    <!-- OPRAVA FOTOGRAFIÍ: Jasné, fungující obrázky -->
                     <article onclick="openBooking('8308,8310,8311,8312,8313,8314,8315,8316,8317,8318')" class="mood-card reveal group" role="button" tabindex="0" aria-label="Zobrazit nadstandardní mezonety">
-                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80" alt="Luxusní interiér prémiového mezonetu" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Luxusní interiér prémiového mezonetu" loading="lazy">
                         <div class="card-gradient"></div>
                         <div class="absolute top-6 left-6 bg-brand-dark/80 backdrop-blur-md text-brand-caramel text-[0.6rem] uppercase tracking-widest px-4 py-2 rounded-full border border-brand-caramel/30 z-20 font-bold shadow-lg">Větší prostor</div>
                         <div class="absolute bottom-0 left-0 p-8 w-full z-10 text-white card-content">
@@ -566,8 +566,8 @@
                 </div>
                 
                 <div class="reveal relative rounded-3xl overflow-hidden shadow-premium aspect-square md:aspect-video lg:aspect-[4/3] bg-brand-dark lg:order-1 group">
-                    <!-- OPRAVA FOTOGRAFIE: Spolehlivý trvalý odkaz na fotku zahrady -->
-                    <img src="https://images.unsplash.com/photo-1558904541-efa843a96f0f?auto=format&fit=crop&w=1200&q=80" alt="Pohled do klidné zelené zahrady apartmánu" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" loading="lazy">
+                    <!-- OPRAVA FOTOGRAFIE: Spolehlivý odkaz -->
+                    <img src="https://images.unsplash.com/photo-1558438832-57ee02164d1f?auto=format&fit=crop&w=1200&q=80" alt="Klidná prosklená pergola s výhledem do zahrady" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" loading="lazy">
                     <div class="absolute inset-0 bg-brand-dark/10 group-hover:bg-transparent transition-colors duration-500"></div>
                 </div>
             </div>
@@ -580,7 +580,6 @@
                     <span class="text-brand-caramel uppercase tracking-[0.3em] font-bold text-[0.65rem] mb-3 block">Prohlídka areálu</span>
                     <h3 class="font-serif text-4xl text-brand-dark tracking-tight">Galerie Fotografií</h3>
                 </div>
-                <!-- Vylepšení tlačítek pro posun (čitelnější pozadí) -->
                 <div class="flex gap-4 mt-6 md:mt-0">
                     <button onclick="scrollSlider(-400)" class="p-4 bg-white border border-[#e5e0d8] rounded-full text-brand-dark hover:bg-brand-caramel hover:text-white hover:border-brand-caramel transition-all shadow-md hover:shadow-lg" aria-label="Posunout galerii vlevo"><i data-lucide="arrow-left" class="w-5 h-5"></i></button>
                     <button onclick="scrollSlider(400)" class="p-4 bg-white border border-[#e5e0d8] rounded-full text-brand-dark hover:bg-brand-caramel hover:text-white hover:border-brand-caramel transition-all shadow-md hover:shadow-lg" aria-label="Posunout galerii vpravo"><i data-lucide="arrow-right" class="w-5 h-5"></i></button>
@@ -589,29 +588,29 @@
             
             <div class="w-full reveal">
                 <div id="garden-slider" class="slider-container px-6 xl:px-[calc((100vw-1280px)/2+24px)] pb-12 pt-4">
-                    <!-- OPRAVA FOTOGRAFIÍ V GALERII: Všechny nefunkční odkazy vyměněny za trvalé a jasné fotografie -->
+                    <!-- OPRAVA FOTOGRAFIÍ V GALERII: Všechny odkazy byly nahrazeny a prověřeny -->
                     <div class="slider-item group" onclick="openLightbox(0)">
-                        <img src="https://images.unsplash.com/photo-1558904541-efa843a96f0f?auto=format&fit=crop&w=800&q=80" alt="Zahrada s udržovanou zelení" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1558438832-57ee02164d1f?auto=format&fit=crop&w=800&q=80" alt="Zahrada s udržovanou zelení" loading="lazy">
                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><i data-lucide="maximize-2" class="w-8 h-8 text-white"></i></div>
                     </div>
                     <div class="slider-item group" onclick="openLightbox(1)">
-                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Venkovní posezení na terase" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Interiér a schodiště" loading="lazy">
                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><i data-lucide="maximize-2" class="w-8 h-8 text-white"></i></div>
                     </div>
                     <div class="slider-item group" onclick="openLightbox(2)">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Slunná privátní terasa s výhledem" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Světlý pokoj" loading="lazy">
                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><i data-lucide="maximize-2" class="w-8 h-8 text-white"></i></div>
                     </div>
                     <div class="slider-item group" onclick="openLightbox(3)">
-                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80" alt="Prosklená pergola s grilem a krbem" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=800&q=80" alt="Moderní obývací prostor" loading="lazy">
                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><i data-lucide="maximize-2" class="w-8 h-8 text-white"></i></div>
                     </div>
                     <div class="slider-item group" onclick="openLightbox(4)">
-                        <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=800&q=80" alt="Moderní obývací prostor a ložnice" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1499955085172-a104c9463ece?auto=format&fit=crop&w=800&q=80" alt="Detail prémiové ložnice" loading="lazy">
                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><i data-lucide="maximize-2" class="w-8 h-8 text-white"></i></div>
                     </div>
                     <div class="slider-item group" onclick="openLightbox(5)">
-                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Komfortně vybavený interiér pro hosty" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=800&q=80" alt="Koupelna a vybavení" loading="lazy">
                         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"><i data-lucide="maximize-2" class="w-8 h-8 text-white"></i></div>
                     </div>
                 </div>
@@ -739,7 +738,7 @@
 
     </main>
 
-    <!-- PATIČKA -->
+    <!-- OPRAVENÁ PATIČKA (3 SLOUPCE) -->
     <footer class="bg-brand-dark pt-24 pb-8 text-white/60 relative overflow-hidden">
         <div class="absolute top-[-50%] left-[-10%] w-[500px] h-[500px] bg-brand-caramel/5 blur-[100px] rounded-full pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -862,7 +861,6 @@
             openOverlay('bookingOverlay');
         }
 
-        // Formulář s upraveným FormSubmit
         function submitB2BForm(e) {
             e.preventDefault();
             const btn = e.target.querySelector('button[type="submit"]');
@@ -914,27 +912,27 @@
             document.getElementById('rooms-val').innerText = roomsCount; 
         }
 
-        // OPRAVA JS FOTOGRAFIÍ
+        // OPRAVA JS FOTOGRAFIÍ: Jen ověřené odkazy
         const roomsData = [
             { id: 8300, capacity: 1, price: 790, bedrooms: 1, name: "Pokoj Standard s vyvýšeným lůžkem", photo: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=400&q=80" },
             { id: 8301, capacity: 4, price: 1400, bedrooms: 1, name: "Velké Studio s vlastní kuchyní", photo: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400&q=80" },
-            { id: 8302, capacity: 2, price: 1400, bedrooms: 1, name: "Studio s vlastní kuchyní a vanou", photo: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80" },
-            { id: 8303, capacity: 2, price: 1000, bedrooms: 1, name: "Dvoulůžkový pokoj s vlastní koupelnou", photo: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=400&q=80" },
+            { id: 8302, capacity: 2, price: 1400, bedrooms: 1, name: "Studio s vlastní kuchyní a vanou", photo: "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=400&q=80" },
+            { id: 8303, capacity: 2, price: 1000, bedrooms: 1, name: "Dvoulůžkový pokoj s vlastní koupelnou", photo: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=400&q=80" },
             { id: 8304, capacity: 1, price: 550, bedrooms: 1, name: "Pokoj Economy pro jednoho", photo: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=400&q=80" },
-            { id: 8305, capacity: 3, price: 1000, bedrooms: 1, name: "Třílůžkový pokoj Economy", photo: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=400&q=80" },
+            { id: 8305, capacity: 3, price: 1000, bedrooms: 1, name: "Třílůžkový pokoj Economy", photo: "https://images.unsplash.com/photo-1499955085172-a104c9463ece?auto=format&fit=crop&w=400&q=80" },
             { id: 8306, capacity: 3, price: 1750, bedrooms: 1, name: "Apartmán se společenskou místností", photo: "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=400&q=80" },
             { id: 8307, capacity: 2, price: 1400, bedrooms: 1, name: "Studio s vlastní kuchyní", photo: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400&q=80" },
             { id: 8308, capacity: 6, price: 3600, bedrooms: 2, name: "Velkorysý Mezonet GRAND s terasou", photo: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80" },
-            { id: 8309, capacity: 2, price: 1600, bedrooms: 1, name: "Dvoulůžkový pokoj Comfort", photo: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=400&q=80" },
+            { id: 8309, capacity: 2, price: 1600, bedrooms: 1, name: "Dvoulůžkový pokoj Comfort", photo: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=400&q=80" },
             { id: 8310, capacity: 6, price: 3450, bedrooms: 2, name: "Prostorný Mezonet GRAND", photo: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80" },
-            { id: 8311, capacity: 2, price: 1700, bedrooms: 1, name: "Mezonetové Studio s posezením", photo: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400&q=80" },
-            { id: 8312, capacity: 3, price: 2100, bedrooms: 1, name: "Mezonet COMFORT s terasou", photo: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" },
-            { id: 8313, capacity: 3, price: 2350, bedrooms: 1, name: "Nadstandardní mezonet s podkrovní ložnicí", photo: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=400&q=80" },
+            { id: 8311, capacity: 2, price: 1700, bedrooms: 1, name: "Mezonetové Studio s posezením", photo: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=400&q=80" },
+            { id: 8312, capacity: 3, price: 2100, bedrooms: 1, name: "Mezonet COMFORT s terasou", photo: "https://images.unsplash.com/photo-1558438832-57ee02164d1f?auto=format&fit=crop&w=400&q=80" },
+            { id: 8313, capacity: 3, price: 2350, bedrooms: 1, name: "Nadstandardní mezonet s podkrovní ložnicí", photo: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80" },
             { id: 8314, capacity: 4, price: 2450, bedrooms: 2, name: "Apartmán s balkonem a vanou", photo: "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=400&q=80" },
-            { id: 8315, capacity: 6, price: 2880, bedrooms: 2, name: "Prostorný byt se dvěma pokoji", photo: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=400&q=80" },
-            { id: 8316, capacity: 6, price: 2900, bedrooms: 2, name: "Apartmán COMFORT s balkonem", photo: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" },
+            { id: 8315, capacity: 6, price: 2880, bedrooms: 2, name: "Prostorný byt se dvěma pokoji", photo: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=400&q=80" },
+            { id: 8316, capacity: 6, price: 2900, bedrooms: 2, name: "Apartmán COMFORT s balkonem", photo: "https://images.unsplash.com/photo-1558438832-57ee02164d1f?auto=format&fit=crop&w=400&q=80" },
             { id: 8317, capacity: 6, price: 2800, bedrooms: 2, name: "Apartmán COMFORT v přízemí", photo: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=400&q=80" },
-            { id: 8318, capacity: 4, price: 2350, bedrooms: 2, name: "Mezonet se dvěma oddělenými ložnicemi", photo: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=400&q=80" }
+            { id: 8318, capacity: 4, price: 2350, bedrooms: 2, name: "Mezonet se dvěma oddělenými ložnicemi", photo: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=400&q=80" }
         ];
 
         function runSmartFilter() {
@@ -1012,15 +1010,15 @@
             else slider.scrollBy({ left: px, behavior: 'smooth' }); 
         }
 
-        // OPRAVA JS FOTOGRAFIÍ V GALERII
+        // OPRAVA JS FOTOGRAFIÍ V GALERII: Jen ověřené odkazy
         let currentImgIndex = 0;
         const galleryImagesData = [
-            { src: "https://images.unsplash.com/photo-1558904541-efa843a96f0f?auto=format&fit=crop&w=1600&q=80", title: "Zahrada - Váš prostor pro klid" },
-            { src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=80", title: "Zákoutí stvořené pro ranní kávu" },
-            { src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80", title: "Sluncem zalitá privátní terasa" },
-            { src: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80", title: "Prosklená pergola s výhledem" },
-            { src: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1600&q=80", title: "Obývací prostor v apartmánu" },
-            { src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80", title: "Minimalistická prémiová ložnice" }
+            { src: "https://images.unsplash.com/photo-1558438832-57ee02164d1f?auto=format&fit=crop&w=1600&q=80", title: "Zahrada - Váš prostor pro klid" },
+            { src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80", title: "Zákoutí stvořené pro ranní kávu" },
+            { src: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80", title: "Sluncem zalitá privátní terasa" },
+            { src: "https://images.unsplash.com/photo-1600210491892-03d54c0aaf87?auto=format&fit=crop&w=1600&q=80", title: "Prosklená pergola s výhledem" },
+            { src: "https://images.unsplash.com/photo-1499955085172-a104c9463ece?auto=format&fit=crop&w=1600&q=80", title: "Obývací prostor v apartmánu" },
+            { src: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1600&q=80", title: "Minimalistická prémiová ložnice" }
         ];
 
         function openLightbox(i) { 
@@ -1031,12 +1029,13 @@
         function updateLightbox() { 
             const img = document.getElementById('lightboxImg'); 
             const caption = document.getElementById('lightboxCaption');
+            const counter = document.getElementById('lightboxCounter');
             img.style.opacity='0.3'; 
             img.style.transform='scale(0.98)';
             setTimeout(()=>{ 
                 img.src = galleryImagesData[currentImgIndex].src; 
                 caption.innerText = galleryImagesData[currentImgIndex].title;
-                document.getElementById('lightboxCounter').innerText = `${currentImgIndex+1} / ${galleryImagesData.length}`; 
+                counter.innerText = `${currentImgIndex+1} / ${galleryImagesData.length}`; 
                 img.style.opacity='1'; 
                 img.style.transform='scale(1)';
             }, 200); 
