@@ -96,7 +96,7 @@
         #scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: #c28e62; z-index: 99999; transition: width 0.1s ease-out; }
 
         /* Overlays & Modals */
-        .overlay { visibility: hidden; opacity: 0; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); position: fixed; inset: 0; z-index: 9000; background: rgba(42, 34, 24, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; align-items: center; justify-content: center; padding: 1.5rem; }
+        .overlay { visibility: hidden; opacity: 0; transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); position: fixed; inset: 0; z-index: 9000; background: rgba(42, 34, 24, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; align-items: center; justify-content: center; padding: 1.5rem; }
         .overlay.active { visibility: visible; opacity: 1; }
         .modal-content { max-height: 90vh; overflow-y: auto; width: 100%; border-radius: 2rem; box-shadow: 0 40px 80px -20px rgba(0,0,0,0.5); background-color: #fdfbf9; scrollbar-width: none; transform: scale(0.95) translateY(20px); transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
         .overlay.active .modal-content { transform: scale(1) translateY(0); }
@@ -148,7 +148,7 @@
             min-width: 177.77vh; /* 16:9 aspect ratio for height */
             transform: translate(-50%, -50%);
             pointer-events: none; /* Prevents clicking on the video */
-            opacity: 0.5; /* Slight opacity to make text pop */
+            opacity: 0.8; /* Zvýšená průhlednost pro jasnější video na pozadí */
             border: none;
         }
     </style>
@@ -199,7 +199,7 @@
                 <a href="#pro-firmy" class="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-brand-dark hover:text-brand-caramel transition-colors">Pro firmy</a>
                 <a href="#zahrada" class="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-brand-dark hover:text-brand-caramel transition-colors">Zahrada</a>
             </nav>
-            <button onclick="openBooking('all')" class="hidden lg:flex bg-brand-dark text-brand-offwhite px-8 py-4 rounded-full text-[0.65rem] font-bold uppercase tracking-[0.2em] hover:bg-brand-caramel transition-all shadow-md hover:shadow-glow transform hover:-translate-y-1">Rezervovat</button>
+            <button onclick="openBooking('all')" class="hidden lg:flex bg-brand-caramel text-brand-offwhite px-8 py-4 rounded-full text-[0.65rem] font-bold uppercase tracking-[0.2em] hover:bg-brand-offwhite hover:text-brand-dark transition-all shadow-md hover:shadow-glow transform hover:-translate-y-1">Rezervovat</button>
             
             <button class="lg:hidden text-white mix-blend-difference hover:text-brand-caramel transition-colors p-2" onclick="toggleMobileMenu()" aria-label="Otevřít menu"><i data-lucide="menu" class="w-8 h-8"></i></button>
         </div>
@@ -210,11 +210,10 @@
         <button onclick="toggleMobileMenu()" class="absolute top-8 right-8 text-white/50 hover:text-brand-offwhite transition-colors p-2" aria-label="Zavřít menu"><i data-lucide="x" class="w-10 h-10"></i></button>
         <span class="font-serif text-4xl text-brand-caramel mb-6 tracking-[0.4em]">ARANKA</span>
         <div class="w-12 h-px bg-brand-caramel/30 mb-6 mx-auto"></div>
-        <a href="#o-nas" onclick="toggleMobileMenu()" class="text-xl font-serif tracking-[0.2em] hover:text-brand-caramel transition-colors">Náš Příběh</a>
-        <a href="#ubytovani-karty" onclick="toggleMobileMenu()" class="text-xl font-serif tracking-[0.2em] hover:text-brand-caramel transition-colors">Apartmány a studia</a>
-        <a href="#pro-firmy" onclick="toggleMobileMenu()" class="text-xl font-serif tracking-[0.2em] text-brand-caramel font-bold">Pro firmy</a>
-        <a href="#zahrada" onclick="toggleMobileMenu()" class="text-xl font-serif tracking-[0.2em] hover:text-brand-caramel transition-colors">Zahrada & Galerie</a>
-        <a href="#faq" onclick="toggleMobileMenu()" class="text-xl font-serif tracking-[0.2em] hover:text-brand-caramel transition-colors">Časté dotazy</a>
+        <a href="#o-nas" onclick="toggleMobileMenu()" class="text-xl font-serif tracking-[0.2em] hover:text-brand-caramel transition-colors">Příběh</a>
+        <a href="#ubytovani-karty" onclick="toggleMobileMenu()" class="text-xl font-serif tracking-[0.2em] hover:text-brand-caramel transition-colors">Apartmány</a>
+        <a href="#pro-firmy" onclick="toggleMobileMenu()" class="text-xl font-serif tracking-[0.2em] hover:text-brand-caramel transition-colors">Pro firmy</a>
+        <a href="#zahrada" onclick="toggleMobileMenu()" class="text-xl font-serif tracking-[0.2em] hover:text-brand-caramel transition-colors">Zahrada</a>
         <button onclick="openBooking('all'); toggleMobileMenu()" class="mt-12 bg-brand-caramel px-12 py-5 font-bold uppercase tracking-[0.2em] text-[0.75rem] rounded-full hover:bg-brand-offwhite hover:text-brand-dark transition-all shadow-glow">Rezervovat online</button>
     </nav>
 
@@ -222,15 +221,16 @@
     <div id="lightboxOverlay" class="overlay" role="dialog" aria-modal="true" aria-label="Prohlížeč obrázků">
         <button onclick="closeAllOverlays()" class="absolute top-6 right-6 text-white/50 hover:text-white z-[6000] p-2" aria-label="Zavřít galerii"><i data-lucide="x" class="w-10 h-10"></i></button>
         <div class="w-full max-w-7xl flex items-center justify-between relative text-brand-offwhite">
-            <button onclick="prevImage()" class="p-4 bg-black/20 hover:bg-brand-caramel rounded-full transition-all backdrop-blur-md transform hover:scale-110 border border-white/10" aria-label="Předchozí obrázek"><i data-lucide="chevron-left" class="w-8 h-8"></i></button>
-            <div class="flex-1 flex flex-col items-center justify-center px-4">
-                <img id="lightboxImg" src="" class="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-premium-dark transition-all duration-500" alt="Detailní fotografie">
-                <div class="mt-8 text-center bg-brand-dark/50 backdrop-blur-md px-8 py-4 rounded-full border border-white/10">
+            <button onclick="prevImage()" class="p-4 bg-black/20 hover:bg-brand-caramel rounded-full transition-all backdrop-blur-md transform hover:scale-110 border border-white/10 z-10" aria-label="Předchozí obrázek"><i data-lucide="chevron-left" class="w-8 h-8"></i></button>
+            <div class="flex-1 flex flex-col items-center justify-center px-4 relative z-0">
+                <!-- Zvětšení obrázku omezeno max. výškou, viz JS pro 15% transformaci -->
+                <img id="lightboxImg" src="" class="max-w-[85vw] max-h-[75vh] object-contain rounded-2xl shadow-premium-dark transition-all duration-500 origin-center" alt="Detailní fotografie">
+                <div class="mt-12 text-center bg-brand-dark/50 backdrop-blur-md px-8 py-4 rounded-full border border-white/10 z-10">
                     <p id="lightboxCaption" class="font-serif tracking-[0.2em] text-lg mb-1 text-brand-caramel"></p>
                     <p id="lightboxCounter" class="text-white/40 text-[0.65rem] tracking-widest font-bold uppercase"></p>
                 </div>
             </div>
-            <button onclick="nextImage()" class="p-4 bg-black/20 hover:bg-brand-caramel rounded-full transition-all backdrop-blur-md transform hover:scale-110 border border-white/10" aria-label="Další obrázek"><i data-lucide="chevron-right" class="w-8 h-8"></i></button>
+            <button onclick="nextImage()" class="p-4 bg-black/20 hover:bg-brand-caramel rounded-full transition-all backdrop-blur-md transform hover:scale-110 border border-white/10 z-10" aria-label="Další obrázek"><i data-lucide="chevron-right" class="w-8 h-8"></i></button>
         </div>
     </div>
 
@@ -332,21 +332,24 @@
                 <!-- Vložené YouTube video na celou obrazovku -->
                 <iframe src="https://www.youtube.com/embed/Ax9NWoYEZTs?autoplay=1&mute=1&controls=0&loop=1&playlist=Ax9NWoYEZTs&playsinline=1&rel=0&showinfo=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
-            <!-- Dramatic gradient for text readability -->
-            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-brand-dark/50 z-0 pointer-events-none"></div>
+            <!-- Zesvětlený gradient pro výraznější zobrazení videa na pozadí -->
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-brand-dark/30 to-black/10 z-0 pointer-events-none"></div>
             
             <div class="relative z-10 w-full max-w-7xl mx-auto px-6 text-center animate-fade-in flex flex-col items-center">
                 
                 <span class="text-brand-caramel uppercase tracking-[0.4em] font-bold text-[0.65rem] mb-6 block animate-slide-up" style="animation-delay: 0.2s">Rezidence s historií</span>
                 <h1 class="font-serif text-5xl md:text-7xl lg:text-[7.5rem] mb-6 tracking-wide text-brand-offwhite drop-shadow-2xl leading-tight animate-slide-up" style="animation-delay: 0.4s">Ubytování<br><span class="text-brand-caramel italic font-light">Aranka</span></h1>
-                <p class="text-brand-offwhite/80 text-lg md:text-2xl font-light max-w-2xl mx-auto drop-shadow-md leading-relaxed mb-16 animate-slide-up" style="animation-delay: 0.6s">
+                <p class="text-brand-offwhite/90 text-lg md:text-2xl font-light max-w-2xl mx-auto drop-shadow-md leading-relaxed mb-16 animate-slide-up" style="animation-delay: 0.6s">
                     Vaše prémiové útočiště v srdci Žatce. Spojení naprostého soukromí, moderního designu a rodinné pohostinnosti.
                 </p>
 
-                <nav aria-label="Rychlá navigace" class="flex flex-nowrap overflow-x-auto justify-start md:justify-center items-center gap-4 w-full no-scrollbar snap-x px-2 animate-slide-up" style="animation-delay: 0.8s;">
-                    <a href="#o-nas" class="snap-center shrink-0 px-10 py-5 rounded-full border border-white/20 bg-brand-dark/40 backdrop-blur-md text-[0.7rem] font-bold uppercase tracking-[0.2em] text-brand-offwhite hover:bg-brand-caramel hover:border-brand-caramel hover:shadow-glow transition-all duration-500">Příběh</a>
-                    <a href="#ubytovani-karty" class="snap-center shrink-0 px-10 py-5 rounded-full border border-white/20 bg-brand-dark/40 backdrop-blur-md text-[0.7rem] font-bold uppercase tracking-[0.2em] text-brand-offwhite hover:bg-brand-caramel hover:border-brand-caramel hover:shadow-glow transition-all duration-500">Pokoje</a>
-                    <button onclick="openBooking('all')" class="snap-center shrink-0 px-12 py-5 rounded-full border border-brand-caramel bg-brand-caramel text-brand-offwhite text-[0.7rem] font-bold uppercase tracking-[0.2em] hover:bg-brand-offwhite hover:text-brand-dark hover:border-brand-offwhite transition-all duration-500 shadow-glow ml-0 md:ml-4 flex items-center gap-3">Rezervovat <i data-lucide="calendar" class="w-4 h-4"></i></button>
+                <!-- Sjednocená navigace s horním menu -->
+                <nav aria-label="Rychlá navigace" class="flex flex-wrap justify-center items-center gap-3 w-full px-2 animate-slide-up" style="animation-delay: 0.8s;">
+                    <a href="#o-nas" class="px-8 py-4 rounded-full border border-white/20 bg-brand-dark/40 backdrop-blur-md text-[0.7rem] font-bold uppercase tracking-[0.2em] text-brand-offwhite hover:bg-brand-caramel hover:border-brand-caramel hover:shadow-glow transition-all duration-500">Příběh</a>
+                    <a href="#ubytovani-karty" class="px-8 py-4 rounded-full border border-white/20 bg-brand-dark/40 backdrop-blur-md text-[0.7rem] font-bold uppercase tracking-[0.2em] text-brand-offwhite hover:bg-brand-caramel hover:border-brand-caramel hover:shadow-glow transition-all duration-500">Apartmány</a>
+                    <a href="#pro-firmy" class="px-8 py-4 rounded-full border border-white/20 bg-brand-dark/40 backdrop-blur-md text-[0.7rem] font-bold uppercase tracking-[0.2em] text-brand-offwhite hover:bg-brand-caramel hover:border-brand-caramel hover:shadow-glow transition-all duration-500">Pro firmy</a>
+                    <a href="#zahrada" class="px-8 py-4 rounded-full border border-white/20 bg-brand-dark/40 backdrop-blur-md text-[0.7rem] font-bold uppercase tracking-[0.2em] text-brand-offwhite hover:bg-brand-caramel hover:border-brand-caramel hover:shadow-glow transition-all duration-500">Zahrada</a>
+                    <button onclick="openBooking('all')" class="px-10 py-4 rounded-full border border-brand-caramel bg-brand-caramel text-brand-offwhite text-[0.7rem] font-bold uppercase tracking-[0.2em] hover:bg-brand-offwhite hover:text-brand-dark hover:border-brand-offwhite transition-all duration-500 shadow-glow ml-0 sm:ml-2 flex items-center gap-3 mt-2 sm:mt-0">Rezervovat <i data-lucide="calendar" class="w-4 h-4"></i></button>
                 </nav>
             </div>
         </section>
