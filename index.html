@@ -120,9 +120,24 @@
         .modal-content::-webkit-scrollbar { display: none; }
 
         /* Navigation */
-        #site-nav { transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); background: transparent; border-bottom: 1px solid transparent; transform: translateY(0); }
+        #site-nav { transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); background: transparent; border-bottom: 1px solid transparent; transform: translateY(0); padding-top: 1.5rem; padding-bottom: 1.5rem; }
         #site-nav.nav-hidden { transform: translateY(-100%); }
-        #site-nav.nav-scrolled { background: rgba(253, 251, 249, 0.9); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid rgba(194, 142, 98, 0.15); box-shadow: 0 10px 40px -10px rgba(42, 34, 24, 0.05); padding-top: 1rem !important; padding-bottom: 1rem !important; }
+        #site-nav.nav-scrolled { background: rgba(253, 251, 249, 0.95); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-bottom: 1px solid rgba(194, 142, 98, 0.15); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05); padding-top: 1rem !important; padding-bottom: 1rem !important; }
+
+        /* Dynamic Nav Colors */
+        #site-nav .nav-logo, #site-nav .mobile-btn { color: #faf8f5; transition: color 0.3s ease; }
+        #site-nav .nav-link { color: rgba(250, 248, 245, 0.9); transition: color 0.3s ease; }
+        
+        #site-nav.nav-scrolled .nav-logo { color: #2a2218; }
+        #site-nav.nav-scrolled .mobile-btn { color: #2a2218; }
+        #site-nav.nav-scrolled .nav-link { color: #4A423C; font-weight: 700; }
+        
+        #site-nav .nav-logo:hover, #site-nav .mobile-btn:hover, #site-nav .nav-link:hover { color: #c28e62; }
+        
+        /* Nav Link Hover Effect */
+        .nav-link-hover { position: relative; }
+        .nav-link-hover::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -6px; left: 50%; background-color: #c28e62; transition: all 0.3s ease; transform: translateX(-50%); }
+        .nav-link-hover:hover::after { width: 100%; }
 
         /* Custom inputs & Forms */
         .b2b-field { border-bottom: 1px solid rgba(140, 126, 113, 0.3); padding: 16px 0; background: transparent; outline: none; transition: border-color 0.4s; font-size: 1rem; color: #2a2218; width: 100%; border-top: none; border-left: none; border-right: none; }
@@ -191,18 +206,24 @@
     </div>
 
     <!-- Header Navigation -->
-    <header id="site-nav" class="fixed top-0 left-0 w-full z-40 py-6 px-6 flex justify-between items-center">
+    <header id="site-nav" class="fixed top-0 left-0 w-full z-40 px-6 flex justify-between items-center">
         <div class="max-w-7xl mx-auto w-full flex justify-between items-center">
-            <a href="#" class="font-serif text-2xl md:text-3xl font-bold tracking-[0.25em] text-brand-dark hover:text-brand-caramel transition-colors mix-blend-difference text-white" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Zpět nahoru">ARANKA</a>
-            <nav class="hidden lg:flex items-center gap-10 bg-brand-light/90 backdrop-blur-md px-10 py-3.5 rounded-full border border-brand-caramel/20 shadow-sm" aria-label="Hlavní menu">
-                <a href="#o-nas" class="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-brand-dark hover:text-brand-caramel transition-colors">Příběh</a>
-                <a href="#ubytovani-karty" class="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-brand-dark hover:text-brand-caramel transition-colors">Apartmány</a>
-                <a href="#pro-firmy" class="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-brand-dark hover:text-brand-caramel transition-colors">Pro firmy</a>
-                <a href="#lokalita" class="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-brand-dark hover:text-brand-caramel transition-colors">Lokalita</a>
-            </nav>
-            <button onclick="openBooking('all')" class="hidden lg:flex bg-brand-caramel text-brand-offwhite px-8 py-4 rounded-full text-[0.65rem] font-bold uppercase tracking-[0.2em] hover:bg-brand-dark hover:text-brand-caramel transition-all shadow-md hover:shadow-glow transform hover:-translate-y-1 active:scale-95">Rezervovat</button>
+            <!-- Logo -->
+            <a href="#" class="nav-logo font-serif text-2xl md:text-3xl font-bold tracking-[0.25em]" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Zpět nahoru">ARANKA</a>
             
-            <button class="lg:hidden text-white mix-blend-difference hover:text-brand-caramel transition-colors p-2" onclick="toggleMobileMenu()" aria-label="Otevřít menu"><i data-lucide="menu" class="w-8 h-8"></i></button>
+            <!-- Clean Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-10" aria-label="Hlavní menu">
+                <a href="#o-nas" class="nav-link nav-link-hover text-[0.7rem] font-semibold uppercase tracking-widest">Příběh</a>
+                <a href="#ubytovani-karty" class="nav-link nav-link-hover text-[0.7rem] font-semibold uppercase tracking-widest">Apartmány</a>
+                <a href="#pro-firmy" class="nav-link nav-link-hover text-[0.7rem] font-semibold uppercase tracking-widest">Pro firmy</a>
+                <a href="#lokalita" class="nav-link nav-link-hover text-[0.7rem] font-semibold uppercase tracking-widest">Lokalita</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <button onclick="openBooking('all')" class="hidden lg:flex bg-brand-caramel text-brand-offwhite px-8 py-3.5 rounded-full text-[0.7rem] font-bold uppercase tracking-[0.15em] hover:bg-brand-dark hover:text-brand-caramel transition-all shadow-md hover:shadow-glow transform hover:-translate-y-1 active:scale-95">Rezervovat</button>
+            
+            <!-- Mobile Menu Btn -->
+            <button class="mobile-btn lg:hidden p-2" onclick="toggleMobileMenu()" aria-label="Otevřít menu"><i data-lucide="menu" class="w-8 h-8"></i></button>
         </div>
     </header>
 
@@ -245,7 +266,7 @@
         </button>
     </div>
 
-    <!-- Modals (Pergola & B2B) kept same structurally but optimized -->
+    <!-- Modals (Pergola & B2B) -->
     <div id="pergolaOverlay" class="overlay" role="dialog" aria-modal="true" aria-labelledby="pergola-title">
         <div class="modal-content max-w-2xl bg-brand-light relative border border-brand-sand">
             <button onclick="closeAllOverlays()" class="absolute top-6 right-6 text-brand-dark hover:text-brand-caramel transition-colors p-2" aria-label="Zavřít"><i data-lucide="x" class="w-8 h-8"></i></button>
@@ -761,7 +782,8 @@
         // Init
         document.addEventListener("DOMContentLoaded", () => {
             lucide.createIcons();
-            document.getElementById('current-year').textContent = new Date().getFullYear();
+            const yearEl = document.getElementById('current-year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
             
             initAuth();
             initDates();
@@ -775,40 +797,52 @@
         function initAuth() {
             if (sessionStorage.getItem('aranka_auth') === 'true') {
                 const overlay = document.getElementById('password-protection');
-                overlay.style.display = 'none';
-                overlay.classList.remove('active');
+                if (overlay) {
+                    overlay.style.display = 'none';
+                    overlay.classList.remove('active');
+                }
             } else {
                 document.body.classList.add('overflow-y-hidden');
             }
             if (!localStorage.getItem('cookies_accepted')) {
-                setTimeout(() => { document.getElementById('cookie-banner').style.transform = 'translateY(0)'; }, 1500);
+                setTimeout(() => { 
+                    const banner = document.getElementById('cookie-banner');
+                    if (banner) banner.style.transform = 'translateY(0)'; 
+                }, 1500);
             }
         }
 
         function checkPassword() {
-            if (document.getElementById('site-password').value.toLowerCase() === 'lukas2026') {
+            const pwdInput = document.getElementById('site-password');
+            if (pwdInput && pwdInput.value.toLowerCase() === 'lukas2026') {
                 sessionStorage.setItem('aranka_auth', 'true');
                 const overlay = document.getElementById('password-protection');
-                overlay.style.opacity = '0';
+                if (overlay) overlay.style.opacity = '0';
                 setTimeout(() => {
-                    overlay.style.display = 'none';
-                    overlay.classList.remove('active');
+                    if (overlay) {
+                        overlay.style.display = 'none';
+                        overlay.classList.remove('active');
+                    }
                     document.body.classList.remove('overflow-y-hidden');
                 }, 1000);
             } else {
                 const errorMsg = document.getElementById('password-error');
-                errorMsg.style.opacity = '1';
-                setTimeout(() => { errorMsg.style.opacity = '0'; }, 3000);
+                if (errorMsg) {
+                    errorMsg.style.opacity = '1';
+                    setTimeout(() => { errorMsg.style.opacity = '0'; }, 3000);
+                }
             }
         }
 
         function acceptCookies(type) {
             localStorage.setItem('cookies_accepted', type);
-            document.getElementById('cookie-banner').style.transform = 'translateY(100%)';
+            const banner = document.getElementById('cookie-banner');
+            if (banner) banner.style.transform = 'translateY(100%)';
         }
 
         // GSAP Animations (2026 Trend)
         function initGSAP() {
+            if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
             gsap.registerPlugin(ScrollTrigger);
 
             // Hero animations
@@ -845,6 +879,9 @@
 
         // Leaflet Map Init
         function initLeaflet() {
+            const mapEl = document.getElementById('leafletMap');
+            if (!mapEl || typeof L === 'undefined') return;
+
             // Žatec coordinates
             var map = L.map('leafletMap', { zoomControl: false }).setView([50.3267, 13.5447], 14);
             
@@ -877,28 +914,35 @@
                 const currentScroll = window.pageYOffset;
                 
                 // Header hide/show logic
-                if (currentScroll > 100) {
-                    nav.classList.add('nav-scrolled');
-                    if (currentScroll > lastScroll && currentScroll > 300) {
-                        nav.classList.add('nav-hidden'); // Hide on scroll down
+                if (nav) {
+                    if (currentScroll > 100) {
+                        nav.classList.add('nav-scrolled');
+                        if (currentScroll > lastScroll && currentScroll > 300) {
+                            nav.classList.add('nav-hidden'); // Hide on scroll down
+                        } else {
+                            nav.classList.remove('nav-hidden'); // Show on scroll up
+                        }
                     } else {
-                        nav.classList.remove('nav-hidden'); // Show on scroll up
+                        nav.classList.remove('nav-scrolled', 'nav-hidden');
                     }
-                } else {
-                    nav.classList.remove('nav-scrolled', 'nav-hidden');
                 }
                 lastScroll = currentScroll;
                 
                 // Progress bar
-                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                progress.style.width = (currentScroll / height * 100) + "%";
+                if (progress) {
+                    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    if (height > 0) {
+                        progress.style.width = (currentScroll / height * 100) + "%";
+                    }
+                }
             });
         }
 
         // Modals & Gallery Events
         function initEvents() {
             document.addEventListener('keydown', (e) => {
-                if(document.getElementById('lightboxOverlay').classList.contains('active')) {
+                const overlay = document.getElementById('lightboxOverlay');
+                if(overlay && overlay.classList.contains('active')) {
                     if(e.key === 'Escape') closeAllOverlays();
                     if(e.key === 'ArrowRight') nextImage();
                     if(e.key === 'ArrowLeft') prevImage();
@@ -907,10 +951,14 @@
             });
         }
 
-        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('active'); }
+        function toggleMobileMenu() { 
+            const menu = document.getElementById('mobile-menu');
+            if (menu) menu.classList.toggle('active'); 
+        }
         function openOverlay(id) { 
             closeAllOverlays();
-            document.getElementById(id).classList.add('active'); 
+            const el = document.getElementById(id);
+            if (el) el.classList.add('active'); 
             document.body.style.overflow='hidden'; 
         }
         function closeAllOverlays() { 
@@ -919,9 +967,12 @@
         }
         
         function openBooking(id) {
-            let url = 'https://book.trevlix.com/book/app/?cid=3998666';
-            if(id !== 'all') url += '&room_type_id=' + id;
-            document.getElementById('trevlixIframe').src = url;
+            const iframe = document.getElementById('trevlixIframe');
+            if (iframe) {
+                let url = 'https://book.trevlix.com/book/app/?cid=3998666';
+                if(id !== 'all') url += '&room_type_id=' + id;
+                iframe.src = url;
+            }
             openOverlay('bookingOverlay');
         }
 
@@ -934,7 +985,10 @@
         function updateLightbox() { 
             const img = document.getElementById('lightboxImg'); 
             const caption = document.getElementById('lightboxCaption');
+            const counter = document.getElementById('lightboxCounter');
             
+            if (!img) return;
+
             // Fade out
             img.style.opacity = '0'; 
             img.style.transform = 'scale(0.95)';
@@ -955,8 +1009,8 @@
                 };
 
                 img.src = galleryImagesData[currentImgIndex].src; 
-                caption.innerText = galleryImagesData[currentImgIndex].title;
-                document.getElementById('lightboxCounter').innerText = `${currentImgIndex+1} / ${galleryImagesData.length}`; 
+                if (caption) caption.innerText = galleryImagesData[currentImgIndex].title;
+                if (counter) counter.innerText = `${currentImgIndex+1} / ${galleryImagesData.length}`; 
             }, 300); 
         }
         function nextImage() { currentImgIndex = (currentImgIndex + 1) % galleryImagesData.length; updateLightbox(); }
@@ -969,35 +1023,56 @@
             const strIn = today.toISOString().split('T')[0];
             const strOut = checkout.toISOString().split('T')[0];
             
-            document.getElementById('filter-checkin').value = strIn;
-            document.getElementById('filter-checkout').value = strOut;
-            document.getElementById('hero-checkin').value = strIn;
-            document.getElementById('hero-checkout').value = strOut;
+            const fCheckin = document.getElementById('filter-checkin');
+            const fCheckout = document.getElementById('filter-checkout');
+            const hCheckin = document.getElementById('hero-checkin');
+            const hCheckout = document.getElementById('hero-checkout');
+
+            if (fCheckin) fCheckin.value = strIn;
+            if (fCheckout) fCheckout.value = strOut;
+            if (hCheckin) hCheckin.value = strIn;
+            if (hCheckout) hCheckout.value = strOut;
         }
 
         function updatePeople(c) { 
             peopleCount = Math.max(1, Math.min(20, peopleCount + c)); 
-            document.getElementById('people-val').innerText = peopleCount; 
+            const pVal = document.getElementById('people-val');
+            if (pVal) pVal.innerText = peopleCount; 
         }
         function updateRooms(c) { 
             roomsCount = Math.max(1, Math.min(10, roomsCount + c)); 
-            document.getElementById('rooms-val').innerText = roomsCount; 
+            const rVal = document.getElementById('rooms-val');
+            if (rVal) rVal.innerText = roomsCount; 
         }
         function updateHeroPeople(c) {
             heroPeopleCount = Math.max(1, Math.min(20, heroPeopleCount + c));
-            document.getElementById('hero-people').innerText = heroPeopleCount + (heroPeopleCount === 1 ? " Osoba" : (heroPeopleCount < 5 ? " Osoby" : " Osob"));
+            const hPeople = document.getElementById('hero-people');
+            if (hPeople) {
+                hPeople.innerText = heroPeopleCount + (heroPeopleCount === 1 ? " Osoba" : (heroPeopleCount < 5 ? " Osoby" : " Osob"));
+            }
         }
         
         function syncAndSearch() {
-            // Copy hero values to main filter
-            document.getElementById('filter-checkin').value = document.getElementById('hero-checkin').value;
-            document.getElementById('filter-checkout').value = document.getElementById('hero-checkout').value;
+            // Copy hero values to main filter safely
+            const fCheckin = document.getElementById('filter-checkin');
+            const hCheckin = document.getElementById('hero-checkin');
+            if (fCheckin && hCheckin) fCheckin.value = hCheckin.value;
+            
+            const fCheckout = document.getElementById('filter-checkout');
+            const hCheckout = document.getElementById('hero-checkout');
+            if (fCheckout && hCheckout) fCheckout.value = hCheckout.value;
+            
             peopleCount = heroPeopleCount;
-            document.getElementById('people-val').innerText = peopleCount;
+            const pVal = document.getElementById('people-val');
+            if (pVal) pVal.innerText = peopleCount;
             
             // Scroll to section and run filter
-            document.getElementById('filter-results-section').classList.remove('hidden');
-            document.getElementById('rezervace').scrollIntoView({behavior: 'smooth'});
+            const section = document.getElementById('filter-results-section');
+            if (section) section.classList.remove('hidden');
+            
+            const rez = document.getElementById('rezervace');
+            if (rez) rez.scrollIntoView({behavior: 'smooth'});
+            
             runSmartFilter();
         }
 
@@ -1005,9 +1080,11 @@
             const section = document.getElementById('filter-results-section');
             const results = document.getElementById('filter-results');
             
-            section.classList.remove('hidden');
-            results.innerHTML = '<div class="flex justify-center py-12"><i data-lucide="loader-2" class="w-12 h-12 animate-spin text-brand-caramel"></i></div>';
-            lucide.createIcons();
+            if (section) section.classList.remove('hidden');
+            if (results) {
+                results.innerHTML = '<div class="flex justify-center py-12"><i data-lucide="loader-2" class="w-12 h-12 animate-spin text-brand-caramel"></i></div>';
+                lucide.createIcons();
+            }
 
             setTimeout(() => {
                 let matches = [];
@@ -1015,6 +1092,8 @@
                     const totalCapacity = roomsCount * r.capacity;
                     if (totalCapacity >= peopleCount) { matches.push({...r, units: roomsCount}); }
                 });
+
+                if (!results) return; // safeguard
 
                 if (matches.length === 0) {
                     results.innerHTML = `
@@ -1058,6 +1137,7 @@
         function submitB2BForm(e) {
             e.preventDefault();
             const btn = e.target.querySelector('button[type="submit"]');
+            if (!btn) return;
             const originalText = btn.innerHTML;
             btn.innerHTML = '<i data-lucide="loader-2" class="w-5 h-5 animate-spin mx-auto"></i> Odesílám...';
             btn.classList.add('opacity-80', 'cursor-not-allowed');
@@ -1089,24 +1169,28 @@
             document.querySelectorAll('.faq-content').forEach(c => {
                 if (c !== content && c.style.maxHeight) {
                     c.style.maxHeight = null;
-                    c.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
+                    const prevIcon = c.previousElementSibling.querySelector('i');
+                    if (prevIcon) prevIcon.style.transform = 'rotate(0deg)';
                 }
             });
 
-            if (content.style.maxHeight) {
+            if (content && content.style.maxHeight) {
                 content.style.maxHeight = null;
-                icon.style.transform = 'rotate(0deg)';
-            } else {
+                if (icon) icon.style.transform = 'rotate(0deg)';
+            } else if (content) {
                 content.style.maxHeight = content.scrollHeight + "px";
-                icon.style.transform = 'rotate(180deg)';
+                if (icon) icon.style.transform = 'rotate(180deg)';
             }
         }
 
         // AI Chat Simulation 
         function generateItinerary() {
             const history = document.getElementById('chat-history');
-            const mood = document.getElementById('ai-who-footer').options[document.getElementById('ai-who-footer').selectedIndex].text;
-            const moodValue = document.getElementById('ai-who-footer').value;
+            const selectEl = document.getElementById('ai-who-footer');
+            if (!history || !selectEl) return;
+
+            const mood = selectEl.options[selectEl.selectedIndex].text;
+            const moodValue = selectEl.value;
             
             // Add User message
             const userMsg = document.createElement('div');
@@ -1136,7 +1220,7 @@
 
             // Generate AI response
             setTimeout(() => {
-                history.removeChild(typingMsg);
+                if (history.contains(typingMsg)) history.removeChild(typingMsg);
                 let aiText = "";
                 switch(moodValue) {
                     case "pár": aiText = "<strong>Skvělá volba pro dva!</strong> Začněte den výběrovou kávou na náměstí. Pokračujte ruku v ruce křivolakými uličkami a vystoupejte na Chmelový maják pro krásný výhled. Večer doporučuji rezervaci v restauraci U Orloje a noc zakončit se sklenkou vína v naší tiché zahradě pod pergolou."; break;
